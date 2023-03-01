@@ -4,9 +4,9 @@ This repository contains source code for the project ***Sculpting with SARA (Spa
 
 
 
-# calibration
+# Implementation notes
 
-## Kinect vs Projector calibration
+### Kinect vs Projector calibration
 
 I created a custom 3D calibration method that does not need OpenCV or a mathematical model of camera distortion.
   1. First, it uses 2 passes of a coded light sequence to create a mapping between the pixel space(s) of the projector output and the Kinect RGB Camera. Each pass should have valid depths, and the depth between the passes should differ more than 10 cm.
@@ -21,6 +21,10 @@ I created a custom 3D calibration method that does not need OpenCV or a mathemat
 [Here](https://github.com/cecarlsen/TrackingToolsForUnity) and [here](https://bingyaohuang.github.io/Calibrate-Kinect-and-projector/) are other solutions for Kinect vs Projector calibration
 
 
-## Scene calibration
+### Scene calibration
 
 Scene calibration is done interactively by manually moving "pins" into place in the Unity Editor, so that the kinect stream line up with the virtual scene  
+
+### Kinect Support for Unity
+
+This uses a MIT licensed Unity Kinect integration by Rumen Filkov called [AzureKinectUnityFree](https://github.com/rfilkov/AzureKinectUnityFree)
