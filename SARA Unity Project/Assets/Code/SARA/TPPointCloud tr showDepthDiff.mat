@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TPPointCloud tr showDepthDiff
+  m_Shader: {fileID: 4800000, guid: 55d962117bdb7254492bbf7456006218, type: 3}
+  m_ShaderKeywords: USE_POINTCLOUD_COLOR
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _FeedbackColors:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParticleTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParticleTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BaseGradientMul: 1
+    - _CentimeterAmount: 0.717
+    - _ColorMiddleSize: 0.414
+    - _DstBlend: 10
+    - _SrcBlend: 5
+    - _Tail: 1
+    - _TailFromSpeed: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorInside: {r: 1, g: 0, b: 0.04872036, a: 1}
+    - _ColorMiddle: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorOutside: {r: 0.2066791, g: 1, b: 0, a: 1}
+    - _NearFar: {r: 0, g: 1000000, b: 10000, a: 1000000}
+    - _Size: {r: 0.38, g: 0, b: 0, a: 0}

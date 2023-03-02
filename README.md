@@ -2,6 +2,9 @@
 
 This repository contains source code for the project ***Sculpting with SARA (Spatial Augmented Reality Assistance)***.
 
+We explore how new digital technologies (such as “Spatial Augmented Reality”) can assist sculpting in the physical space after a 3D-model. The goal is to develop digital tools in a collaborative way that can visually guide an artist in the work of manual transfer of digital to physical three-dimensional form. These digital tools, together with the artist’s manual work, could become an alternative to machine-controlled 3D-milling and printing when a 3D model is to be translated into physical form on a large scale.
+
+The project received a [research and development grant](https://kkh.se/en/research/research-and-development/#sculpting-with-sara-spatial-augmented-reality-assistance) from the [Royal Institute of Art in Stockholm](https://kkh.se/en).
 
 
 # Implementation notes
