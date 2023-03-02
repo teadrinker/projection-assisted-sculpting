@@ -1,10 +1,10 @@
 # TeaImg 
 
-This wraps calculation of arrays of float4 (Color/Vector4 etc), with a dual CPU/GPU backend, in a neat API.
-Actual calculation are not performed until you call RequestPixel(s) or RequestTexture.
+This wraps calculation of arrays of float4 (Color/Vector4 etc) into a neat API with a dual CPU/GPU backend.
+Actual calculation is not performed until you call RequestPixel(s) or RequestTexture.
 
     var ctx = new 
-    var yellow = ctx.DataSource(Color.red]).add(ctx.DataSource(Color.green)).RequestPixel(); 
+    var yellow = ctx.DataSource(Color.red).add(ctx.DataSource(Color.green)).RequestPixel(); 
     var yellowArray = ctx.DataSource(new Color[Color.red]).add(ctx.DataSource(new Color[Color.green])).RequestPixels();
 
 
