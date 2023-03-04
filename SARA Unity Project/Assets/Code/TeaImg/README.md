@@ -10,6 +10,8 @@ Actual calculation is not performed until you call RequestPixel(s) or RequestTex
 
 ### Build-in functions
 
+If you pass a single value instead of vector to these functions, a specialized constant case will be used internally.
+
 ```
 neg() 
 abs()
