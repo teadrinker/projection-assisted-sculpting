@@ -129,3 +129,102 @@ float snoise(float4 v)
         + dot(m1 * m1, float2(dot(p3, x3), dot(p4, x4))));
 
 }
+
+
+/*
+
+// more uint hash
+// https://www.shadertoy.com/view/ttVGDV
+
+int N = 1; // Number of iterations, N = 1000 for benchmark
+//#define HASH wellons3
+//#define HASH jenkins
+//#define HASH murmur
+//#define HASH wellons
+#define HASH wellons3
+
+//Wang
+uint wang(uint a) {
+	a = (a ^ 61U) ^ (a >> 16U);
+	a = a * 9U;
+	a = a ^ (a >> 4);
+	a = a * 0x27d4eb2dU;
+	a = a ^ (a >> 15);
+	return a;
+}
+
+// Jenkins
+uint jenkins(uint a) {
+    a -= (a<<6);
+    a ^= (a>>17);
+    a -= (a<<9);
+    a ^= (a<<4);
+    a -= (a<<3);
+    a ^= (a<<10);
+    a ^= (a>>15);
+    return a;
+}
+
+// MurmurHash3 finalizer
+uint murmur(uint x) {
+    x ^= x >> 16;
+    x *= 0x85ebca6bU;
+    x ^= x >> 13;
+    x *= 0xc2b2ae35U;
+    x ^= x >> 16;
+    return x;
+}
+
+// Chris Wellons: https://nullprogram.com/blog/2018/07/31/
+uint wellons(uint x) {
+    x ^= x >> 16;
+    x *= 0x7feb352dU;
+    x ^= x >> 15;
+    x *= 0x846ca68bU;
+    x ^= x >> 16;
+    return x;
+}
+
+// Chris Wellons 3-round function
+// bias: 0.020888578919738908 = minimal theoretic limit
+uint wellons3(uint x)
+{
+    x ^= x >> 17;
+    x *= 0xed5ad4bbU;
+    x ^= x >> 11;
+    x *= 0xac4c1b51U;
+    x ^= x >> 15;
+    x *= 0x31848babU;
+    x ^= x >> 14;
+    return x;
+}
+
+float hashtest(uint a) {
+    uint hash = a;
+    for (int i = 0; i < N; i++) {
+    	hash = HASH(hash);
+    }
+    return float(hash) / float(0xFFFFFFFFU); // Uniform in [0,1]
+}
+
+vec4 rand4(uint seed){
+    return vec4(hashtest(seed^0x34F85A93U),
+                hashtest(seed^0x85FB93D5U),
+                hashtest(seed^0x6253DF84U),
+                hashtest(seed^0x25FC3625U));
+}
+
+void mainImage( out vec4 O, vec2 U )
+{
+    vec2 uv = U-0.5*iResolution.xy;
+    uint seed = uint(U.x) + (uint(U.y) << 11);
+    // Extra mixing improves Wang hash
+    if (iMouse.z > 0.0) seed *= 257U;
+    O = rand4(seed);
+}
+
+
+
+
+
+*/
