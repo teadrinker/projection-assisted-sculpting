@@ -1,6 +1,6 @@
 # TeaImg 
 
-This wraps calculation of arrays of float4 (Color/Vector4 etc) into a neat API with a dual CPU/GPU backend.
+This wraps calculation of arrays of float4 (Color/Vector4 etc) into a neat [fluent-interface-style](https://en.wikipedia.org/wiki/Fluent_interface) API with a dual CPU/GPU backend.
 Actual calculation is not performed until you call RequestPixel(s) or RequestTexture.
 
     var ctx = new 
