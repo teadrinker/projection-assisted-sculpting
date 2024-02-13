@@ -1,3 +1,4 @@
+![](projection-assisted-sculpting.jpg)
 # projection-assisted-sculpting
 
 This repository contains source code for the project ***Sculpting with SARA (Spatial Augmented Reality Assistance)***.
