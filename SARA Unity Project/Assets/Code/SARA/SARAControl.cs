@@ -64,7 +64,6 @@ namespace teadrinker
         public com.rfilkov.kinect.Kinect4AzureInterface kinect = null;
         public DisplaceImagePostFX displaceImagePostFX = null;
 
-        private bool _prevDebugKinectStream = true;
         private float _prevKinectRGBExposure = -1f;
 
         private Color _orgBackColor = Color.black;
@@ -208,26 +207,24 @@ namespace teadrinker
             }
 
 
-            if (debugKinectStream != _prevDebugKinectStream)
+
+            if (debugKinectStream)
             {
-                _prevDebugKinectStream = debugKinectStream;
-                if (debugKinectStream)
-                {
-                    depthStream.OverrideMaterial = null;
-                    depthStream.ColorAmount = 1f;
-                    kinect.pointCloudResolution = com.rfilkov.kinect.DepthSensorBase.PointCloudResolution.DepthCameraResolution;
-                    displaceImagePostFX.gameObject.GetComponent<Camera>().backgroundColor = Color.white;
-                    displaceImagePostFX.gameObject.GetComponent<Camera>().cullingMask = 0;
-                }
-                else
-                {
-                    depthStream.OverrideMaterial = pointCloudMaterial;
-                    depthStream.ColorAmount = 0f;
-                    kinect.pointCloudResolution = com.rfilkov.kinect.DepthSensorBase.PointCloudResolution.ColorCameraResolution;
-                    displaceImagePostFX.gameObject.GetComponent<Camera>().backgroundColor = _orgBackColor;
-                    displaceImagePostFX.gameObject.GetComponent<Camera>().cullingMask = _orgCullingMask;
-                }
+                depthStream.OverrideMaterial = null;
+                depthStream.ColorAmount = 1f;
+                kinect.pointCloudResolution = com.rfilkov.kinect.DepthSensorBase.PointCloudResolution.DepthCameraResolution;
+                displaceImagePostFX.gameObject.GetComponent<Camera>().backgroundColor = new Color(calibrationColorMul, calibrationColorMul, calibrationColorMul, 1f);
+                displaceImagePostFX.gameObject.GetComponent<Camera>().cullingMask = 0;
             }
+            else
+            {
+                depthStream.OverrideMaterial = pointCloudMaterial;
+                depthStream.ColorAmount = 0f;
+                kinect.pointCloudResolution = com.rfilkov.kinect.DepthSensorBase.PointCloudResolution.ColorCameraResolution;
+                displaceImagePostFX.gameObject.GetComponent<Camera>().backgroundColor = _orgBackColor;
+                displaceImagePostFX.gameObject.GetComponent<Camera>().cullingMask = _orgCullingMask;
+            }
+
 
             depthStream.averageDepthFrames = averageKinectDepth ? averageKinectDepthFrames : 0;
 
